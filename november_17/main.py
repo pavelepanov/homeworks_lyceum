@@ -67,7 +67,7 @@ def ans4():
     for kol, numes in enumerate(nums):
         if num % numes == 0:
             return f'Делится на {numes}'
-        return 'не «делится на 2, 3, 5, 7»'
+    return 'не «делится на 2, 3, 5, 7»'
 
 
 def ans5():
