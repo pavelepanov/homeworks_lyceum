@@ -48,10 +48,10 @@ def ans3():
     sred = 0
     count = 0
 
-    a = float(input())
+    a = int(input())
     while a != 0:
         b.append(a)
-        a = float(input())
+        a = int(input())
 
     mymax = max(b)
     mymin = min(b)
