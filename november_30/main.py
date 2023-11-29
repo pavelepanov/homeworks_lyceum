@@ -45,12 +45,43 @@ def ans3():
 
     b = []
 
-    mymax = None
-    mymin = None
-    sred = None
-    mysum = 0
+    sred = 0
+    count = 0
 
     a = float(input())
     while a != 0:
         b.append(a)
         a = float(input())
+
+    mymax = max(b)
+    mymin = min(b)
+    mysum = sum(b)
+
+    for i, key in enumerate(b):
+        count += 1
+        sred += key
+
+    sred /= count
+
+    return f'max: {mymax} min: {mymin} sum: {mysum} sred: {sred}'
+
+
+def ans4():
+    '''
+    Напишите программу, которая вводит только четные числа. Если в качестве ввода программе подается не четное число, она должна вывести строку "Введите четное число!". Ввод заканчивается, когда программа получит 6 корректных чисел. Когда это произойдет, выведите их произведение.
+    '''
+
+    b = 1
+    count = 1
+
+    a = float(input())
+    while b != 6:
+        if a % 2 != 0:
+            print("Введите четное число!")
+            a = float(input())
+        else:
+            count *= a
+            a = float(input())
+            b += 1
+
+    return count
