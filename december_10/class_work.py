@@ -84,3 +84,45 @@ def ans256():
     return new_coords
 
 
+def list_to_list(vesh: list[float]):
+    new = list(map(str, vesh))
+    return new
+
+
+def reverse_list(mystr: list[str]):
+    func = list(map(lambda x: x[::-1] + '!', mystr))
+    return func
+
+
+def for_complex(x):
+    if x % 2 == 0 and x % 4 == 0:
+        return x
+
+
+def complex_filter(box: list[int]):
+    new = list(filter(for_complex, box))
+    return new
+
+
+def filter_unique_words(text):
+    word = text.split()
+    new = list(filter(lambda x: word.count(x) == 1, word))
+    return new
+
+
+def compare_test_results(box1, box2, names):
+    def check_score(score):
+        return "Да" if score >= 60 else "Нет"
+
+    results = list(zip(box1, box2))
+    final_results = list(map(lambda x: ( check_score(x[0]), check_score(x[1])), results))
+    final_results = list(zip(names, final_results))
+    return final_results
+
+
+def long_livers(box1, box2):
+    def longs(age):
+        return age >= 90
+
+    long_livers = list(filter(lambda x: longs(x[0]), zip(box1, box2)))
+    return long_livers
