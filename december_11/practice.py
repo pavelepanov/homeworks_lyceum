@@ -70,3 +70,25 @@ def ans3(n: int, x: float):
     return f
 
 
+def ans16(n):
+
+    def fac(n):
+        factorial = 1
+        while n > 1:
+            factorial *= n
+            n -= 1
+        return factorial
+
+    def res(nn):
+        return fac(2*nn)
+
+    y = 0
+    some_n = 1
+    while some_n != n:
+        some_rez = res(some_n)
+        some_fac = fac(some_rez)
+        y += some_fac
+        some_n += 2
+
+    return y
+
