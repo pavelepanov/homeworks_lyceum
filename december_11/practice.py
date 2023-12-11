@@ -71,24 +71,28 @@ def ans3(n: int, x: float):
 
 
 def ans16(n):
-
     def fac(n):
         factorial = 1
         while n > 1:
             factorial *= n
             n -= 1
         return factorial
+    p = 0
+    for i in range(2, 2 * n + 1, 2):
+        p += fac(i)
+    print(p)
 
-    def res(nn):
-        return fac(2*nn)
-
-    y = 0
-    some_n = 1
-    while some_n != n:
-        some_rez = res(some_n)
-        some_fac = fac(some_rez)
-        y += some_fac
-        some_n += 2
 
     return y
 
+
+
+def abonent():
+    '''Написать программу, которая по заданному номеру квартиры абонента кабельной сети выводит на экран номер подъезда, в котором находится абонент. Дом состоит из 4 подъездов. В первом подъезде абонентами являются квартиры: 3 – 7, 13, 15; во втором: 19 – 20, 27, 28; в третьем: 33, 35, 37 – 40; в четвертом: 51.'''
+    '''
+    4 подъезда
+    1: 3-7, 13, 15
+    2: 19 - 20, 27, 28
+    3: 33, 35, 37, 37 - 40
+    4: 51
+    '''
