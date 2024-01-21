@@ -41,9 +41,6 @@ def ans59():
     u2 = 1
     ab1 = 'one'
     ab2 = 'two'
-    #c[str(m[u1])] = m[u1]
-    #c[str(m[u2])] = m[u2]
-    #minsum = c[str(m[u1])] + c[str(m[u2])]
 
     for i in range(len(m)-1):
         if m[u1] + m[u2] < minsum:
@@ -57,4 +54,18 @@ def ans59():
 
     return c
 
-print(ans59())
+
+
+def als():
+    a = 2
+    b = 4
+    c = 'my {0} and {1}'.format(a, b)
+
+    return c
+
+def also():
+    a = int(input())
+
+    match a:
+        case 1:
+            print(1)
