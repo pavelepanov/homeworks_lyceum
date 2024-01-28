@@ -7,14 +7,13 @@ def ans1():
     лом/концом строки.
     """
 
-    a = input()
-    b = 0
+    a = input().split()
+    b = 10000000000000000000000000
     c = []
     for i in a:
-        if len(i) >= b:
+        if len(i) <= b:
             b = len(i)
             c.append(i)
-
     print(c[-1])
 
 
@@ -60,4 +59,4 @@ def ans3():
 
 
 
-ans3()
+ans1()
