@@ -39,24 +39,23 @@ def ans3():
     изменять.
     """
 
-    text_full = input()
-    words = text_full.split()
-    new_words = []
-    c = {}
-    for word in words:
-        c[word] = word[-1]
-    for key, value in c.items():
-        new = []
-        for i in range(len(key)-1):
-            if key[i] == value:
-                new.append('.')
-            else:
-                new.append(key[i])
-        new.append(key[-1])
-        new_words.append(''.join(new))
-    ans = ' '.join(new_words)
-    print(ans)
+    s = input()
+
+    i = 0
+    while i < len(s):
+        if s[i] != ' ':
+            j = i + 1
+            while j < len(s) and s[j] != ' ':
+                j += 1
+            j -= 1
+            while i < j:
+                if s[i] == s[j]:
+                    s = s[:i] + '.' + s[i + 1:]
+                i += 1
+        i += 1
+
+    print(s)
 
 
 
-ans1()
+ans3()
