@@ -23,7 +23,6 @@ def ans_28():
         d = a[:maxc+1] + a[minc:]
     print(d)
 
-ans_28()
 
 
 def ans_13():
@@ -42,7 +41,7 @@ def ans_13():
 
 
 def ans_29():
-    a = a = list(map(int, input().split()))
+    a = list(map(int, input().split()))
     sred = sum(a)/len(a)
     for key, value in enumerate(a):
         if value > sred:
@@ -52,7 +51,7 @@ def ans_29():
 
 
 def ans_12():
-    a = a = list(map(int, input().split()))
+    a = list(map(int, input().split()))
     minc = 9999999999999999999999
     for key, value in enumerate(a):
         if value < minc:
@@ -61,7 +60,7 @@ def ans_12():
 
     a.pop(mink)
 
-    mic = 9999999999999999999999
+    minc = 9999999999999999999999
     for key, value in enumerate(a):
         if value < minc:
             minc = value
