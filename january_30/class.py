@@ -94,6 +94,7 @@ def ans225():
         else:
             my.append(a)
 
+
 def ans226():
     c = input().split()
     c = list(map(int, c))

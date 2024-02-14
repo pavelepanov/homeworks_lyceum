@@ -1,0 +1,69 @@
+# 12 28 13 29
+
+def ans_28():
+    a = list(map(int, input().split()))
+    my_min = 999999999999999999999999999
+    my_max = 0
+    mink = 0
+    maxk = 0
+    for key, value in enumerate(a):
+        if value < my_min:
+            my_min = value
+            mink = key
+        if value > my_max:
+            my_max = value
+            maxk = key
+
+    minc = a.index(my_min)
+    maxc = a.index(my_max)
+
+    if mink < maxk:
+        d = a[:minc+1] + a[maxc:]
+    else:
+        d = a[:maxc+1] + a[minc:]
+    print(d)
+
+ans_28()
+
+
+def ans_13():
+    n = input('колво выстрелов ')
+    a = []
+    for i in range(int(n)):
+        a.append(int(input('0 или 1 ')))
+    zero = 1
+    one = 0
+    for i in a:
+        if i == 0:
+            zero += 1
+        if i == 1:
+            one += 1
+    print(f'{one/zero*100}%')
+
+
+def ans_29():
+    a = a = list(map(int, input().split()))
+    sred = sum(a)/len(a)
+    for key, value in enumerate(a):
+        if value > sred:
+            a.pop(key)
+
+    print(a)
+
+
+def ans_12():
+    a = a = list(map(int, input().split()))
+    minc = 9999999999999999999999
+    for key, value in enumerate(a):
+        if value < minc:
+            minc = value
+            mink = key
+
+    a.pop(mink)
+
+    mic = 9999999999999999999999
+    for key, value in enumerate(a):
+        if value < minc:
+            minc = value
+
+    print(minc)
