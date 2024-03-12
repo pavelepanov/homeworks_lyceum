@@ -24,9 +24,9 @@ def ans_28():
     print(d)
 
 
-
 def ans_13():
     n = input('колво выстрелов ')
+    answer = []
     a = []
     for i in range(int(n)):
         a.append(int(input('0 или 1 ')))
@@ -35,9 +35,11 @@ def ans_13():
     for i in a:
         if i == 0:
             zero += 1
+            answer.append(one/zero*100)
         if i == 1:
             one += 1
-    print(f'{one/zero*100}%')
+            answer.append(one / zero * 100)
+    print(answer)
 
 
 def ans_29():
