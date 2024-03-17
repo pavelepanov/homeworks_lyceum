@@ -252,6 +252,22 @@ def ans14():
 
 
 def ans15():
+    matrix1 = [
+        [2, 3, 5, 7],
+        [4, 5, 6, 8],
+        [7, 8, 9, 10],
+        [11, 12, 13, 14]
+    ]
+
+    matrix = [
+            [11, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0]
+        ]
+
+
+
     def is_prime(num):
         if num < 2:
             return False
@@ -259,38 +275,13 @@ def ans15():
             if num % i == 0:
                 return False
         return True
+    n = len(matrix)
+    count = 0
 
-    matrix = [
-        [2, 3, 5, 7],
-        [8, 11, 13, 17],
-        [19, 23, 29, 31],
-        [37, 41, 43, 47]
-    ]
+    for i in range(n):
+        for j in range(i, n):
+            for k in range(i, j + 1):
+                if is_prime(matrix[k][j]) and is_prime(matrix[i][k]):
+                    count += 1
 
-
-    rows, cols = len(matrix), len(matrix[0])
-    primes = []
-    for i in range(rows):
-        for j in range(cols):
-            if is_prime(matrix[i][j]):
-                primes.append((matrix[i][j], i, j))
-
-    triangles_count = 0
-    for a in primes:
-        x1, y1 = a[1], a[2]
-        for b in primes:
-            if a == b:
-                continue
-            x2, y2 = b[1], b[2]
-            v1 = (x2 - x1, y1 - y2)  # вектор между a и b
-            a_mirror = (x1 + v1[1], y1 + v1[0])  # зеркально отраженная точка a
-            if a_mirror in primes:
-                c = (x2 + v1[1], y2 + v1[0])  # третья вершина треугольника
-                if c in primes:
-                    triangles_count += 1
-
-    print(triangles_count)
-
-
-
-ans15()
+    print(count)
