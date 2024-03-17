@@ -199,3 +199,98 @@ def ans11():
         print(True)
     else:
         print(False)
+
+def ans12():
+    m = [
+        [1, 0, 0],
+        [0, 2, 0],
+        [0, 0, 3],
+    ]
+    nula = []
+
+    for row in m:
+        nula.append(sum(row))
+    if nula == list(sorted(nula)):
+        print(True)
+    else:
+        print(False)
+
+
+def ans13():
+    m = [
+        [1, 0, 0],
+        [0, 2, 0],
+        [0, 0, 1],
+    ]
+    nula = [0 for i in range(len(m[0]))]
+
+    for col in range(len(m[0])):
+        for row in range(len(m)):
+            nula[col] += m[row][col]
+    if nula == nula[::-1]:
+        print(True)
+    else:
+        print(False)
+
+
+def ans14():
+    m = [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ]
+    nula = [0 for i in range(len(m[0]))]
+
+    for col in range(len(m[0])):
+        for row in range(len(m)):
+            nula[col] += m[row][col]
+
+    if len(set(nula)) == 1:
+        print(True)
+    else:
+        print(False)
+
+
+def ans15():
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    matrix = [
+        [2, 3, 5, 7],
+        [8, 11, 13, 17],
+        [19, 23, 29, 31],
+        [37, 41, 43, 47]
+    ]
+
+
+    rows, cols = len(matrix), len(matrix[0])
+    primes = []
+    for i in range(rows):
+        for j in range(cols):
+            if is_prime(matrix[i][j]):
+                primes.append((matrix[i][j], i, j))
+
+    triangles_count = 0
+    for a in primes:
+        x1, y1 = a[1], a[2]
+        for b in primes:
+            if a == b:
+                continue
+            x2, y2 = b[1], b[2]
+            v1 = (x2 - x1, y1 - y2)  # вектор между a и b
+            a_mirror = (x1 + v1[1], y1 + v1[0])  # зеркально отраженная точка a
+            if a_mirror in primes:
+                c = (x2 + v1[1], y2 + v1[0])  # третья вершина треугольника
+                if c in primes:
+                    triangles_count += 1
+
+    print(triangles_count)
+
+
+
+ans15()
