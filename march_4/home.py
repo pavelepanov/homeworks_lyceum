@@ -10,6 +10,7 @@ def ans361():
         mysum += j[n-1]
 
     print(int(mysum/a))
+ans361()
 
 def ans362():
     categories = {"отлично": [8, 9, 10],
